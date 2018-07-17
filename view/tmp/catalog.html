@@ -1,0 +1,31 @@
+{{ include('header.template') }}
+
+<body>
+      <div id="wrapper">
+         <h2>Catalog</h2>
+         {{ include ('cart.template') }}
+         <ul>
+            {% for cat in cats %}
+            <li><a href="/catalog/{{ cat.getId() }}">{{ cat.name }}</a></li>
+            {% endfor %}
+         </ul>
+         <h2>Товары</h2>
+         {% for item in items%}
+            <h4>{{item.name}}</h4>
+            <p>{{item.description}}</p>
+            <img src="/img/{{ item.getMainImage() }}" alt="" />
+
+            <form action="/addtocart" method="post">
+               <input type="hidden" name="item" value="{{ item.getId() }}" />
+               <input type="hidden" name="name" value="{{ item.name }}" />
+               <input type="hidden" name="price" value="{{ item.price }}" />
+               <input type="text" name="amount" value="" />
+               <input type="submit" name="" id="" value="в корзину" />
+            </form>
+
+            <a href="/item/{{ item.getId()}}">ПОДРОБНЕЕ</a>
+         {% endfor %}
+      </div> <!--wrapper -->
+   </body>
+{{ include('footer.template') }}
+

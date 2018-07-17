@@ -1,0 +1,27 @@
+
+{% include ('header.template') %}
+
+   {% if err %}
+   <p>Ошибки:</p>
+   <ul>
+   {% for er in err %}
+      <li>{{ er['emessage'] }}</li>
+   {% endfor %}
+   </ul>
+   {% endif%}
+   
+   <form action="/do-login" method="post">
+      <p>
+      <label for="email">email</label>
+      <input type="email" name="email" id="" value="" />
+      </p>
+      <p>
+      <label for="password">password</label>
+      <input type="password" name="password" id="" value="" />
+      </p>
+      <input type="submit" name="submit" id="subbmit" value="submit" />
+   </form>
+
+   <a href="/register">Зарегистрироваться</a>
+
+{% include ('footer.template') %}

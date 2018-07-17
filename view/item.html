@@ -1,0 +1,22 @@
+{{ include('header.template') }}
+<div>
+
+
+            <h4>{{ item.name }} </h4>
+            <h6> {{ item.description }} </h6>
+            <img src="/img/{{ item.getMainImage() }}" alt="" />
+            <p> Цена: {{ item.price }} </p>
+
+            <form action="/addtocart" method="post">
+               <input type="hidden" name="item" value="{{ item.getId() }}" />
+               <input type="hidden" name="name" value="{{ item.name }}" />
+               <input type="hidden" name="imagefilename" value="{{ item.getMainImage() }}" />
+               <input type="hidden" name="price" value="{{ item.price }}" />
+               <input type="text" name="amount" value="" />
+               <input type="submit" name="" id="" value="в корзину" />
+            </form>
+
+            <a href="/">В КАТАЛОГ</a>
+         </div>
+            
+{{ include('footer.template') }}

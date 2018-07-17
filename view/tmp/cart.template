@@ -1,0 +1,22 @@
+{% if cart %}
+   <table>
+      <tr>
+         <th>id</th>
+         <th>Название</th>
+         <th>колво</th>
+         <th>цена</th>
+         <th>стоимость</th>
+      </tr>
+      {% for row in cart %}
+         <tr>
+            <td>{{ row.getId() }}</td>
+            <td>{{ row.name }}</td>
+            <td>{{ row.amount }}</td>
+            <td>{{ row.price }}</td>
+            <td>{{ row.amount * row.price }}</td>
+         <tr>
+      {% endfor%}
+   </table>
+<a href="/clearcart">Очистить корзину</a>
+{% endif%}
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Чепецкая мебельная фабрика</title>
+    <link rel="icon" href="/img/title_icon.png">
+    <link rel="stylesheet" href="packages/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/core-style.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+      <div class="main-content-wrapper d-flex clearfix">
+
+        <!-- Mobile Nav 767px-->
+        <div class="mobile-nav">
+            <div class="amado-navbar-brand">
+                <a href="/"><img src="img/mailrusigimg_1.png" alt="logo"></a>
+            </div>
+            <div class="amado-navbar-toggler">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <header class="header-area clearfix">
+            <div class="nav-close">
+                <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+            
+            <div class="logo">
+                <a href="/"><img src="/img/mailrusigimg_1.png" alt="my icon"></a>
+            </div>
+            
+            <nav class="amado-nav">
+                <ul>
+                    <li class="active"><a href="/">Главная</a></li>
+                    <li><a href="/catalog">Каталог</a></li>
+                    <li><a href="/cart">Корзина 
+                          {% if cartscount %}
+                          <span class='badge'>{{ cartscount }}
+                          </span>
+                          {% endif %}
+                       </a>
+                    </li>
+                    <li><a href="/cabinet">Личный кабинет</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </nav>
+            <br>
+            <br>
+            <!-- Social -->
+            <div class="social-info d-flex justify-content-between">
+                <a href="https://www.instagram.com/chepcamebel" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="https://m.vk.com/club117603272" target="_blank"><i class="fa fa-vk" aria-hidden="true"></i></a>
+            </div>
+        </header>
+
